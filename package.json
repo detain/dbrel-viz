@@ -1,7 +1,7 @@
 {
   "name": "@detain/dbrel-viz",
   "version": "1.0.0",
-  "description": "Interactive database relationship visualization library with 20 swappable rendering engines",
+  "description": "Interactive database relationship visualization library with 20 swappable rendering engines (JointJS, Cytoscape, D3, Sigma, vis.js, GoJS, XYFlow, and more)",
   "keywords": [
     "database",
     "visualization",
@@ -22,7 +22,6 @@
   "main": "src/index.js",
   "files": [
     "src/",
-    "dist/",
     "README.md",
     "LICENSE"
   ],
@@ -31,7 +30,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/",
-    "build": "echo 'No build step required - files load directly from src/'"
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
@@ -60,5 +59,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
