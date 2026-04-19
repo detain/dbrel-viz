@@ -1,0 +1,60 @@
+{
+  "name": "@detain/dbrel-viz",
+  "version": "1.0.0",
+  "description": "Interactive database relationship visualization library with 20 swappable rendering engines",
+  "keywords": [
+    "database",
+    "visualization",
+    "graph",
+    "relationships",
+    "schema",
+    "jointjs",
+    "cytoscape",
+    "d3",
+    "vis",
+    "sigma",
+    "xyflow",
+    "dataviz",
+    "erd"
+  ],
+  "author": "Joe Huss <detain@interserver.net>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "files": [
+    "src/",
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "build": "echo 'No build step required - files load directly from src/'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/detain/dbrel-viz.git"
+  },
+  "homepage": "https://github.com/detain/dbrel-viz#readme",
+  "bugs": {
+    "url": "https://github.com/detain/dbrel-viz/issues"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": ["<rootDir>/test/**/*.test.js"],
+    "moduleFileExtensions": ["js"],
+    "collectCoverageFrom": [
+      "src/core/shell.js"
+    ]
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

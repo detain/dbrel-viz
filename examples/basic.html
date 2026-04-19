@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dbrel-viz basic example</title>
+
+    <!-- jQuery (required for Bootstrap modals) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap (for modals and button styling) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Font Awesome 4 for icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+    <!-- dbrel-viz CSS -->
+    <link rel="stylesheet" href="../src/core/styles.css">
+
+    <style>
+        html, body { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+    </style>
+
+    <!-- Configure paths BEFORE loading the shell -->
+    <script>
+        window.DbRel = {
+            paths: {
+                renderers: '../src/renderers/',
+                rendererPrefix: '',
+                rendererSuffix: '.js',
+                libIcons: '../src/icons/',
+                tableIcons: './icons/', // your table icon directory
+                ajaxUrl: '/api/db-rel', // your backend endpoint
+                ajaxChoice: '' // not needed if you're using a dedicated route
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="db-rel-app">
+        <div class="card">
+            <div class="card-header">
+                <div id="db-rel-lib-selector"></div>
+                <input id="db-rel-custid" type="text" placeholder="CustID" />
+                <button id="db-rel-load">Load</button>
+                <button id="db-rel-help"><i class="fa fa-question"></i></button>
+                <!-- (Full toolbar - see the main MyAdmin template for reference) -->
+            </div>
+            <div class="card-body">
+                <div id="db-rel-sidebar">
+                    <div id="db-rel-table-list"></div>
+                </div>
+                <div id="db-rel-paper-wrap">
+                    <div id="db-rel-paper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the shell, then the default renderer -->
+    <script src="../src/core/shell.js"></script>
+    <script src="../src/renderers/jointjs.js"></script>
+    <!-- Other renderers load on demand via DbRel.switchRenderer() -->
+
+    <script>
+        // Optionally auto-load a customer:
+        // document.getElementById('db-rel-custid').value = '123';
+        // DbRel.loadData(123);
+    </script>
+</body>
+</html>
