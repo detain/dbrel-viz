@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/detain/dbrel-viz.git"
+    "url": "git+https://github.com/detain/dbrel-viz.git"
   },
   "homepage": "https://github.com/detain/dbrel-viz#readme",
   "bugs": {
@@ -48,8 +48,12 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "testMatch": ["<rootDir>/test/**/*.test.js"],
-    "moduleFileExtensions": ["js"],
+    "testMatch": [
+      "<rootDir>/test/**/*.test.js"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
     "collectCoverageFrom": [
       "src/core/shell.js"
     ]
